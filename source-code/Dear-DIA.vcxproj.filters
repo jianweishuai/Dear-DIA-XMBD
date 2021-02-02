@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\src">
+      <UniqueIdentifier>{54332003-c760-4fd8-a4f1-96bca57d7f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\lib">
+      <UniqueIdentifier>{168bc6fb-5824-4251-bd09-714a59d46f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\include">
+      <UniqueIdentifier>{0da2fd00-d848-42e0-98d2-51d3a65d0a74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\Base64.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\blockingconcurrentqueue.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\c_predict_api.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\concurrentqueue.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\zconf.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\zlib.h">
+      <Filter>头文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\configure.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\findpeaksx.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kmeanspp.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\multi_threads_run.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\namespace.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\parser_fasta.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utility.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mzxml_reader.h">
+      <Filter>头文件\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
