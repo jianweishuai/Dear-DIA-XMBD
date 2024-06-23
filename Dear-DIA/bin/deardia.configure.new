@@ -1,0 +1,25 @@
+# Welcome to use deardia v1.5.0 software.
+# Development team from Xiamen University, China.
+# This is the deardia parameters file. 
+# Everything following the '#' symbol means comment.
+
+database_name = E:\DeepDIA\mzxml\db.fasta
+
+# Up to 3 variable modifications per peptide are supported. 
+# format <mass>@<residues>
+# Note: 42.0106@n specify represent Acetylation
+variable_mod = 42.0106@n
+variable_mod = 15.9949@M
+
+pep_min_length = 7	#minimum length of peptides
+pep_max_length = 40	#maximum length of peptides
+miss_cleavage = 2	#miss cleavage of enzyme digestion 
+decoy_prefix = DECOY_	#prefix of decoy proteins in fasta database
+
+ms1_mz_tol = 50	#precursor m/z tolerance (Unit: ppm).
+ms2_bin_size = 30	#binning size of fragment m/z.
+k_clusters = 20	#Number of clusters used for k-Means.
+buffer_size = 4096	#buffer space size when loading mzXML file.
+slider_strides = 1	#overlap of neighboring sliders.
+min_hit_num = 6	#hit b ions + hit y ions >= 6.
+ms1_max_charge = 4	#precursor max charge.
