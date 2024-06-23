@@ -707,9 +707,9 @@ Public License instead of this License.  But first, please read
 #include "tbb/parallel_sort.h"
 #include "tbb/concurrent_queue.h"
 #include "tbb/concurrent_vector.h"
+#include "./net_params_20200420.h"
 #include "./eigen3/Eigen/Core"
 #include "./eigen3/Eigen/Dense"
-#include "./net_params_20200420.h"
 
 #define MAX_ITER 200
 #define N_FEATURES 17
@@ -1375,48 +1375,6 @@ void deardia::ReadConfigureFile(int argc, char* argv[])
 	}
 }
 
-
-
-void deardia::PolyFit(const std::vector<double>& xValues,
-	const std::vector<double>& yValues, const int degree)
-{
-	int numCoefficients = degree + 1;
-	size_t nCount = xValues.size();
-
-	Eigen::MatrixXf X(nCount, numCoefficients);
-	Eigen::MatrixXf Y(nCount, 1);
-
-	for (size_t i = 0; i < nCount; i++)
-	{
-		Y(i, 0) = yValues[i];
-	}
-
-	for (size_t nRow = 0; nRow < nCount; nRow++)
-	{
-		double nVal = 1.0f;
-		for (int nCol = 0; nCol < numCoefficients; nCol++)
-		{
-			X(nRow, nCol) = nVal;
-			nVal *= xValues[nRow];
-		}
-	}
-
-	Eigen::VectorXf coefficients = X.colPivHouseholderQr().solve(Y);
-
-	if (degree == 2)
-	{
-		deardia::paramA = coefficients(0);
-		deardia::paramB = coefficients(1);
-		deardia::paramC = coefficients(2);
-	}
-	else
-	{
-		deardia::paramA = coefficients(0);
-		deardia::paramB = coefficients(1);
-		deardia::paramC = 0.0;
-	}
-}
-
 double deardia::LogCombination(int n, int m)
 {
 	if (m > n)
@@ -1790,6 +1748,46 @@ void deardia::InSilicoDigestion(std::vector<deardia::PeptideInfo>& nonModPeptLis
 #endif // TEST_FASTA
 }
 
+
+void deardia::PolyFit(const std::vector<double>& xValues,
+	const std::vector<double>& yValues, const int degree)
+{
+	int numCoefficients = degree + 1;
+	size_t nCount = xValues.size();
+
+	Eigen::MatrixXf X(nCount, numCoefficients);
+	Eigen::MatrixXf Y(nCount, 1);
+
+	for (size_t i = 0; i < nCount; i++)
+	{
+		Y(i, 0) = yValues[i];
+	}
+
+	for (size_t nRow = 0; nRow < nCount; nRow++)
+	{
+		double nVal = 1.0f;
+		for (int nCol = 0; nCol < numCoefficients; nCol++)
+		{
+			X(nRow, nCol) = nVal;
+			nVal *= xValues[nRow];
+		}
+	}
+
+	Eigen::VectorXf coefficients = X.colPivHouseholderQr().solve(Y);
+
+	if (degree == 2)
+	{
+		deardia::paramA = coefficients(0);
+		deardia::paramB = coefficients(1);
+		deardia::paramC = coefficients(2);
+	}
+	else
+	{
+		deardia::paramA = coefficients(0);
+		deardia::paramB = coefficients(1);
+		deardia::paramC = 0.0;
+	}
+}
 
 
 
