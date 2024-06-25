@@ -60,7 +60,7 @@ If you have any problems installing the software, please feel free to contact us
 ## Update News
 
 - **2022.6.01 updatde:** Upgrade Dear-DIA to support mzML, mzXML, wiff and raw formats.
-- **2022.5.30 updatde:** fix some BUGs.
+- **2022.5.30 updatde:** fixd some BUGs.
 
 ## Supported data format
 
